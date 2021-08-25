@@ -10,7 +10,6 @@ class HeaderFragment extends BaseFragment {
     this.toCombaines = root.$('button:nth-child(2)')
     this.toAdminPanel = root.$('button:nth-child(3)')
     this.logOut = root.$('.btn.btn-primary.logout')
-
   }
 }
 

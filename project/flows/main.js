@@ -1,7 +1,8 @@
 // @ts-check
+const {expect} = require('assertior')
 const {provider} = require('../pages/provider')
-
 const {main} = provider;
+
 
 /**
  *
@@ -17,6 +18,11 @@ async function userLogin(userData = {}) {
     await main.loginForm[userDataKey].sendKeys(userData[userDataKey])
   }
   await main.loginForm.signIn.click()
+}
+
+async function chekThatImpossibleToLogin() {
+  const message = await main.loginForm.dangermesssage.getText()
+  expect(message).toBeString;
 }
 
 
@@ -38,8 +44,15 @@ async function userRegistration(userDataReg = {}) {
   await main.registrationForm.signIn.click()
 }
 
+async function chekThatImpossibleToRegistration() {
+  const alert = await main.registrationForm.alertmessage.getText()
+  expect(alert).toBeString;
+}
+
 module.exports = {
   userLogin,
-  userRegistration
+  userRegistration,
+  chekThatImpossibleToLogin,
+  chekThatImpossibleToRegistration
 }
 

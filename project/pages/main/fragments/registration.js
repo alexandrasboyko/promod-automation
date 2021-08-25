@@ -3,7 +3,7 @@ const {BaseFragment} = require('../../../../lib')
 class RegistrationFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-
+    this.alertmessage = root.$('.alert.alert-danger')
     this.usernameReg = root.$('input[placeholder="Ім\'я користувача"]')
     this.nameReg = root.$('input[placeholder="Ім\'я"]')
     this.emailReg = root.$('input[placeholder="Імейл"]')

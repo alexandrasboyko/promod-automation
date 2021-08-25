@@ -4,6 +4,7 @@ const {BaseFragment} = require('../../../../lib')
 class LoginFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
+    this.dangermesssage = root.$('.alert.alert-danger')
     this.username = root.$('input[placeholder="Ім\'я користувача"]')
     this.password = root.$('input[placeholder="пароль"]')
     this.signIn = root.$('.btn.btn-primary')
