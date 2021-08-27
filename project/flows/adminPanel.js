@@ -2,17 +2,16 @@
 const {expect} = require('assertior')
 const {provider} = require('../pages/provider')
 
-const {table} = provider;
+const {admin} = provider;
 /**
  *
  * @param {string} username
  */
-async function checkThatUserLoggetIn(username) {
-  const greetingMessage = await table.header.greeting.getText(username)
+async function checkThatUserOnAdminPanel(username) {
+  const greetingMessage = await admin.header.greeting.getText()
   expect(greetingMessage).stringIncludesSubstring(username)
 }
 
 module.exports = {
-  checkThatUserLoggetIn
+  checkThatUserOnAdminPanel
 }
-

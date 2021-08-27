@@ -1,7 +1,6 @@
 {
   "name": "promod-automation",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "drivers_instal": "selenium-standalone install",
@@ -26,5 +25,9 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": ""
 }

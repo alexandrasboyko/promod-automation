@@ -3,7 +3,6 @@ const {expect} = require('assertior')
 const {provider} = require('../pages/provider')
 const {main} = provider;
 
-
 /**
  *
  * @param {object} userData

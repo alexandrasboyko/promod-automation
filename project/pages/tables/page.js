@@ -8,7 +8,7 @@ class Tables extends BasePage {
   constructor() {
     super('#table_page', 'Tables page')
     this.header = this.init('.header', 'Header', HeaderFragment)
-    this.filtering = this.init('.table.filtering', 'Filter', FilterFragment)
+    this.filtering = this.init('.table.filtering', 'Filter form', FilterFragment)
   }
 }
 

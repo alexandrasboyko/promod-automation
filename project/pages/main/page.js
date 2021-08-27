@@ -13,8 +13,6 @@ class Main extends BasePage {
   }
 }
 
-
-
 module.exports = {
   Main
 }
