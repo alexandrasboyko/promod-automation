@@ -25,8 +25,7 @@ describe('describe', () => {
 
   it('it', async () => {
     await browser.get('http://localhost:4000/admin')
-    const check = await checkThatUserOnAdminPanel('admin')
-    await expect(chek).toBeString
+    await checkThatUserOnAdminPanel('admin')
 
     await browser.sleep(5000)
   })
