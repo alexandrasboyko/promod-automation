@@ -1,21 +1,26 @@
 // @ts-check
-const mainflows = require('./main')
+const mainFlows = require('./main')
+const tablesFlows = require('./tables')
 const {prettifyCamelCase} = require('sat-utils')
 
 const initFlows = {
-  ...mainflows
+  ...mainFlows,
+  ...tablesFlows
 }
+
 Object.keys(initFlows).forEach((flowFnName) => {
   const prettyName = prettifyCamelCase(flowFnName)
-  const fn = initFlows[flowFnName]
+  const fn_value = initFlows[flowFnName]
+  console.log('!')
   initFlows[flowFnName] = async function(...args) {
     console.log(`I ${prettyName}`)
-    return fn.call(this, ...args)
+    // console.log(fn_value.call(this, ...args), '!!!!!!!!!!')
+    return fn_value.call(this, ...args)
   }
 })
 
 const I = {
-  ...mainflows
+  ...initFlows
 }
 
 module.exports = {

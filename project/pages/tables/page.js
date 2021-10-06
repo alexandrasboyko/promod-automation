@@ -10,19 +10,23 @@ const {HeaderFragment} = require('./fragments/header')
 /**
  * @typedef {object} TablesPageInteractionInterface
  *
- * @property {(data:{ })=>Promise<void>} sendKeys sendKeys method
+ * @property {(data:{ }) => Promise <void>} sendKeys sendKeys method
+ *
  * @property {(data:{
  * header?: HeaderCommonAction
- * })=>Promise<void>} click click-method
- * * @property {(data:{
+ * }) => Promise <{
+ * header?: HeaderGetResAction
+ * }> } getData getData-click-method
+ *
+ * @property {(data:{
  * header?: HeaderCommonAction
- * })=>Promise<void>} click click-method
+ * }) => Promise <void> } click click-method
  */
 
 class TablesPage extends BasePage {
   constructor() {
-    super('#table_page', 'MainPage')
-    this.header = this.init('._Tables_header', 'Tables', HeaderFragment);
+    super('#table_page', 'Table Page')
+    this.header = this.init('.header', 'Header', HeaderFragment);
 
   }
 }

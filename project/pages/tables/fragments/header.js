@@ -16,8 +16,7 @@ const {$} = seleniumWD
 class HeaderFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.greetingMessage = this.root.$('h3');
-    this.signUp = this.root.$('.btn.btn:nth-child(2)')
+    this.greetingMessage = this.root.$('h3')
   }
 }
 

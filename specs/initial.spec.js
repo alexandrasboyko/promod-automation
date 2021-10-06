@@ -5,10 +5,10 @@
 //const {pageProvider} = require('../project/pages/provider')
 //const {userLogin, chekThatImpossibleToLogin} = require('../project/flows/main')
 //const {userRegistration, chekThatImpossibleToRegistration} = require('../project/flows/main')
-//const {checkThatUserLoggetIn} = require('../project/flows/tables')
+//const {chekThatUserLoggedInSystem} = require('../project/flows/tables')
 //const {checkThatUserOnAdminPanel} = require('../project/flows/adminPanel')
-const {provider} = require('../project')
-const {client, I} = provider
+//const {provider} = require('../project')
+//const {client, I} = provider
 
 describe('describe', () => {
 
@@ -39,12 +39,14 @@ describe('describe', () => {
   //   await client.sleep(13000)
   // })
 
-  it('test it', async () => {
-    await client.get('http://localhost:4000')
-    await I.registerInSystem({usernameReg: "admin", nameReg: "new_admin", emailReg: "admin@admin", passwordReg: "admin1"})
+  // it('test it', async () => {
+  //   await client.get('http://localhost:4000')
+  //   await I.registerInSystem({usernameReg: "admin", nameReg: "new_admin", emailReg: "admin@admin", passwordReg: "admin1"})
 
-    await client.sleep(13000)
-  })
+  //   await client.sleep(13000)
+  // })
+
+
 })
 
 
