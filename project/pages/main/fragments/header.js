@@ -1,21 +1,22 @@
 // @ts-check
 const {BaseFragment} = require('../../../../lib')
-const {seleniumWD} = require('promod')
-const {$} = seleniumWD
 
 /**
  * @typedef {object} HeaderCommonAction
- * @property {null} [signIn] signIn
- * @property {null} [signUp] signUp
+ * @typedef {null} [signIn] signIn
+ * @typedef {null} [signUp] signUp
+ *
  */
-class HeaderFragment extends BaseFragment {
+
+
+class HeaerFrag extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.signIn = this.root.$('.btn.btn:nth-child(1)');
-    this.signUp = this.root.$('.btn.btn:nth-child(2)')
+    this.signIn = this.root.$('.btn.btn:nth-child(1)')
+    this.signUp = this.root.$('.btn.btn:nth-child1(2)')
   }
 }
 
 module.exports = {
-  HeaderFragment
+  HeaerFrag
 }

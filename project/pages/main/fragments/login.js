@@ -1,8 +1,5 @@
 // @ts-check
 const {BaseFragment} = require('../../../../lib')
-const {seleniumWD} = require('promod')
-const {$} = seleniumWD
-
 /**
  * @typedef {object} LoginCommonAction
  * @property {null} [username] username
@@ -21,8 +18,7 @@ class LoginFragment extends BaseFragment {
     super(root, name)
     this.username = this.root.$('input[placeholder="Ім\'я користувача"]')
     this.password = this.root.$('input[placeholder="пароль"]')
-    this.signInLog = this.root.$('.btn.btn-primary');
-
+    this.signInLog = this.root.$('.btn.btn-primary')
   }
 }
 

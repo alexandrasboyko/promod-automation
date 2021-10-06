@@ -1,7 +1,5 @@
 // @ts-check
 const {BaseFragment} = require('../../../../lib')
-const {seleniumWD} = require('promod')
-const {$} = seleniumWD
 
 /**
  * @typedef {object} RegistrationCommonAction
@@ -19,6 +17,7 @@ const {$} = seleniumWD
  * @property {string|number} [emailReg] emailReg
  * @property {string|number} [passwordReg] passwordReg
  */
+
 class RegistrationFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
@@ -26,7 +25,7 @@ class RegistrationFragment extends BaseFragment {
     this.nameReg = this.root.$('input[placeholder="Ім\'я"]')
     this.emailReg = this.root.$('input[placeholder="Імейл"]')
     this.passwordReg = this.root.$('input[placeholder="пароль"]')
-    this.signUpReg = this.root.$('.btn.btn-primary');
+    this.signUpReg = this.root.$('.btn.btn-primary')
   }
 }
 
