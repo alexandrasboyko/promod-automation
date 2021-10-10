@@ -12,11 +12,32 @@ const {client, I} = provider
 
 describe('describe', () => {
 
+  // it('test it', async () => {
+  //   const userD = {username: "admin", password: "admin"}
+  //   await client.get('http://localhost:4000')
+  //   await I.loginToSystem(userD);
+  //   await I.chekThatUserLoggedInSystem(userD.username)
+
+  //   await client.sleep(13000)
+  // })
+
+  // it('test it', async () => {
+  //   const userD = {username: "admin", password: "admin"}
+  //   await client.get('http://localhost:4000')
+  //   await I.loginToSystem(userD);
+  //   await I.chekThatUserLoggedtoSys(userD.username)
+  //   await client.sleep(13000)
+  // })
+
   it('test it', async () => {
-    const userD = {username: "admin", password: "admin"}
+
     await client.get('http://localhost:4000')
-    await I.loginToSystem(userD);
-    await I.chekThatUserLoggedInSystem(userD.username)
+    await I.registerInSystem({
+      usernameReg: "admin",
+      nameReg: "admin",
+      emailReg: "admin",
+      passwordReg: "admin"
+    });
 
     await client.sleep(13000)
   })
