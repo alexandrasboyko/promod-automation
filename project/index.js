@@ -9,7 +9,6 @@ const provider = {
   get client() {
     return client
   }
-
 }
 
 module.exports = {

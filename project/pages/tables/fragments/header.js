@@ -3,15 +3,18 @@ const {BaseFragment, Button} = require('../../../../lib')
 
 /**
  * @typedef {object} HeaderCommonAction
- * @property {null} [signIn] signIn
- * @property {null} [signUp] signUp
+ * @property {null} [greetingMessage] greetingMessage
+ */
+
+/**
+ * @typedef {object} HeaderGetResAction
+ * @property {string} [greetingMessage] greetingMessage
  */
 
 class HeaderFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.signIn = this.init('.btn.btn:nth-child(1)', 'Sign In button', Button)
-    this.signUp = this.init('.btn.btn:nth-child(2)', 'Sign Up button', Button)
+    this.greetingMessage = this.init('h3', 'Greeting message', Button)
   }
 }
 
