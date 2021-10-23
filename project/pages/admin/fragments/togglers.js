@@ -16,7 +16,7 @@ class TogglersFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
     this.newUser = this.init('.btn.btn:nth-child(1)', 'New User', Button)
-    this.usersList = this.init('.btn.btn:nth-child(2)', 'usersList', Button)
+    this.usersList = this.init('.btn.btn:nth-child(2)', 'Users List', Button)
   }
 }
 

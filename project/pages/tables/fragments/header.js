@@ -1,20 +1,23 @@
 // @ts-check
-const {BaseFragment, Button} = require('../../../../lib')
+const {BaseFragment, Button, Text} = require('../../../../lib')
 
 /**
  * @typedef {object} HeaderCommonAction
  * @property {null} [greetingMessage] greetingMessage
+ * @property {null} [toAdmin] toAdmin
  */
 
 /**
  * @typedef {object} HeaderGetResAction
  * @property {string} [greetingMessage] greetingMessage
+ * @property {string} [toAdmin] toAdmin
  */
 
 class HeaderFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.greetingMessage = this.init('h3', 'Greeting message', Button)
+    this.greetingMessage = this.init('h3', 'Greeting message', Text)
+    this.toAdmin = this.init('a[href="/admin"] button', 'To Admin Page', Button)
   }
 }
 

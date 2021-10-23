@@ -13,9 +13,9 @@ async function chekThatUserLoggedInSystem(username) {
 }
 
 async function navigateToAdmin() {
-  await tables.click({header:})
+  await tables.click({header: {toAdmin: null}})
 }
 
 module.exports = {
-  chekThatUserLoggedInSystem
+  chekThatUserLoggedInSystem, navigateToAdmin
 }

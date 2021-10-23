@@ -1,5 +1,5 @@
 // @ts-check
-const {BasePage, Button} = require('../../../lib')
+const {BasePage} = require('../../../lib')
 const {HeaderFragment} = require('./fragments/header')
 
 /**
@@ -27,7 +27,7 @@ class TablesPage extends BasePage {
   constructor() {
     super('#table_page', 'Tables Page')
     this.header = this.init('.header', 'Header', HeaderFragment)
-    this.toAdmin = this.init('a[href="/admin"] button', 'To Admin Page', Button)
+
   }
 }
 

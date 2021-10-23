@@ -37,7 +37,7 @@ class AdminPage extends BasePage {
   constructor() {
     super('#admin_page', 'Admin Page')
     this.togglers = this.init('.view_toggler', 'Toggler Buttons', TogglersFragment)
-    this.login = this.init('.admin_new_user', 'New User creation form', UserFormFragment)
+    this.userForm = this.init('.admin_new_user', 'New User creation form', UserFormFragment)
 
   }
 }

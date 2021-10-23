@@ -37,7 +37,7 @@ class UserFormFragment extends BaseFragment {
     this.username = this.init('input[placeholder="Ім\'я користувача"]', 'Username field', Input)
     this.name = this.init('input[placeholder="Ім\'я"]', 'Name field', Input)
     this.email = this.init('input[placeholder="Імейл"]', 'Email field', Input)
-    this.password = this.init('input[placeholder="пароль"]', 'Password field', Input)
+    this.password = this.init('input[placeholder="Пароль"]', 'Password field', Input)
     this.isAdmin = this.init('input[type="checkbox"]', 'Is Admin checkbox', Checkbox)
     this.create = this.init('.btn.btn-primary', 'Sign Up button', Button)
   }

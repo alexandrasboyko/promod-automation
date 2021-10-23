@@ -10,39 +10,36 @@ const {client, I} = provider
 
 
 describe('Login Form', () => {
+  const adminData = {username: "admin", password: "admin"}
+  it('test it', async () => {
 
-  // it('test it', async () => {
-  //   const userD = {username: "admin", password: "admin"}
-  //   await client.get('http://localhost:4000')
-  //   await I.loginToSystem(userD);
-  //   await I.chekThatUserLoggedInSystem(userD.username)
-  //   await client.sleep(13000)
-  // })
-  // it('test it', async () => {
-  //   const userD = {username: "admin", password: "admin"}
-  //   await client.get('http://localhost:4000')
-  //   await I.loginToSystem(userD);
-  //   await I.chekThatUserLoggedtoSys(userD.username)
-  //   await client.sleep(13000)
-  // })
+    await client.get('http://localhost:4000')
+    await I.loginToSystem(adminData);
+    await I.chekThatUserLoggedInSystem(adminData.username)
+    await client.sleep(13000)
+  })
 
-  // it('[P] Success login', async () => {
+  // it('[N] Failed Login', async () => {
+  //   const {allure} = require('allure-mocha/runtime');
+  //   allure.epic('Some info');
   //   await client.get('http://localhost:4000')
-  //   await I.registerInSystem({
-  //     usernameReg: "admin",
-  //     nameReg: "admin",
-  //     emailReg: "admin",
-  //     passwordReg: "admin"
-  //   });
-  //   await client.sleep(13000)
+  //   await I.loginToSystem({username: 'admin', password: 'admin', clickSingInButton: false})
+  //   await I.checkThatAfterFailedLoginFieldsAreFilled({username: 'admin', password: 'admin'})
   // })
 
-  it.only('[N] Failed Login', async () => {
+  it.only('[P] Admin creates new user', async () => {
     const {allure} = require('allure-mocha/runtime');
     allure.epic('Some info');
     await client.get('http://localhost:4000')
-    await I.loginToSystem({username: 'admin', password: 'admin', clickSingInButton: false})
-    await I.checkThatAfterFailedLoginFieldsAreFilled({username: 'admin', password: 'admin'})
+    await I.loginToSystem({username: 'admin', password: 'admin', clickSingInButton: true})
+    await I.navigateToAdmin()
+    await I.createNewUserOnAdminPage({
+      username: 'test1',
+      name: 'test1',
+      email: 'test1',
+      password: 'test1'
+    })
+    await client.sleep(13000)
   })
 })
 

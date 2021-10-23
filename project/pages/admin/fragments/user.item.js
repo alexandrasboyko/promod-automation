@@ -16,7 +16,7 @@ class UserItemFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
     this.username = this.init('.user_item_username', 'Username', Button)
-    this.details = this.init('button', 'details', Button)
+    this.details = this.init('button', 'Details', Button)
   }
 }
 

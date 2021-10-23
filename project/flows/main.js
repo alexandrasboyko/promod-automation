@@ -20,6 +20,7 @@ function fieldsToNull(obj) {
 async function loginToSystem({clickSingInButton = true, ...userData} = {}) {
 
   await main.click({header: {signIn: null}})
+
   await main.sendKeys({login: userData})
 
   if(clickSingInButton) await main.click({login: {signInLog: null}})
@@ -64,7 +65,7 @@ async function checkThatAfterFailedLoginFieldsAreFilled(userData = {}) {
   // }
   Object.keys(userData).forEach((key) => {
     // Тобто key в нас поля userData, якщо в userData = {username: 'admin', password: 'admin'}
-    // ТОді на першій ітерації будуть порівнюватися 'admin' і фактичне значення поля username на фрагменті login
+    // Тоді на першій ітерації будуть порівнюватися 'admin' і фактичне значення поля username на фрагменті login
     expect(userData[key]).toEqual(login[key], `Login form ${key} element should have value ${userData[key]}`)
   })
 
