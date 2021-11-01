@@ -1,5 +1,5 @@
 //@ts-check
-const {BaseFragment} = require('../../../../lib')
+const {BaseFragment, Input, Button} = require('../../../../lib')
 
 /**
  * @typedef {object} RegistrationCommonAction
@@ -21,11 +21,11 @@ const {BaseFragment} = require('../../../../lib')
 class RegistrationFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.usernameReg = this.root.$('input[placeholder="Ім\'я користувача"]') // root-элемента фрагмента на странице
-    this.nameReg = this.root.$('input[placeholder="Ім\'я"]') // root-элемента фрагмента на странице
-    this.emailReg = this.root.$('input[placeholder="Імейл"]') // root-элемента фрагмента на странице
-    this.passwordReg = this.root.$('input[placeholder="пароль"]') // root-элемента фрагмента на странице
-    this.signUpReg = this.root.$('.btn.btn-primary') // root-элемента фрагмента на странице
+    this.usernameReg = this.init('input[placeholder="Ім\'я користувача"]', 'UsernameReg Field', Input) // root-элемента фрагмента на странице
+    this.nameReg = this.init('input[placeholder="Ім\'я"]', 'NameReg Field', Input) // root-элемента фрагмента на странице
+    this.emailReg = this.init('input[placeholder="Імейл"]', 'EmailReg Field', Input) // root-элемента фрагмента на странице
+    this.passwordReg = this.init('input[placeholder="пароль"]', 'PasswordReg Field', Input) // root-элемента фрагмента на странице
+    this.signUpReg = this.init('.btn.btn-primary', 'SignUpReg Button', Button) // root-элемента фрагмента на странице
   }
 }
 

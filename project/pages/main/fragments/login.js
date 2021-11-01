@@ -1,5 +1,5 @@
 //@ts-check
-const {BaseFragment} = require('../../../../lib')
+const {BaseFragment, Input, Button} = require('../../../../lib')
 
 /**
  * @typedef {object} LoginCommonAction
@@ -13,13 +13,20 @@ const {BaseFragment} = require('../../../../lib')
  * @property {string|number} [username] username
  * @property {string|number} [password] password
  */
+
+/**
+ * @typedef {object} LoginGetResAction
+ * @property {string} [username] username
+ * @property {string} [password] password
+ */
+
 //Логин-Фрагмент
 class LoginFragment extends BaseFragment {
   constructor(root, name) {
     super(root, name)
-    this.username = this.root.$('input[placeholder="Ім\'я користувача"]') // root-элемента фрагмента на странице
-    this.password = this.root.$('input[placeholder="пароль"]') // root-элемента фрагмента на странице
-    this.signInLog = this.root.$('.btn.btn-primary') // root-элемента фрагмента на странице
+    this.username = this.init('input[placeholder="Ім\'я користувача"]', 'Username Field', Input) // root-элемента фрагмента на странице
+    this.password = this.init('input[placeholder="пароль"]', 'Password Field', Input) // root-элемента фрагмента на странице
+    this.signInLog = this.init('.btn.btn-primary', 'SignInLog Button', Button) // root-элемента фрагмента на странице
   }
 }
 
