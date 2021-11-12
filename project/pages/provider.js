@@ -8,6 +8,10 @@ const pageProvider = {
   get tables() { // метод для взаимодействия с tables страницей
     const {getTables} = require('./tables/page')
     return getTables()
+  },
+  get admin() { // метод для взаимодействия с admin страницей
+    const {getAdmin} = require('./admin/page')
+    return getAdmin()
   }
 }
 

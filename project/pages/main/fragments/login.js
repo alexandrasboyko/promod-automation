@@ -26,7 +26,7 @@ class LoginFragment extends BaseFragment {
     super(root, name)
     this.username = this.init('input[placeholder="Ім\'я користувача"]', 'Username Field', Input) // root-элемента фрагмента на странице
     this.password = this.init('input[placeholder="пароль"]', 'Password Field', Input) // root-элемента фрагмента на странице
-    this.signInLog = this.init('.btn.btn-primary', 'SignInLog Button', Button) // root-элемента фрагмента на странице
+    this.signInLog = this.init('.btn.btn-primary', 'Sign In Log Button', Button) // root-элемента фрагмента на странице
   }
 }
 
