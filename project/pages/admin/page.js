@@ -9,14 +9,13 @@ const {UsersListFragment} = require('./fragments/usersList')
  *@typedef {import('./fragments/new.user').NewUserFormCommonAction} NewUserFormCommonAction
  *@typedef {import('./fragments/new.user').NewUserFormSendKeysAction} NewUserFormSendKeysAction
  *@typedef {import('./fragments/new.user').NewUserFormGetResAction} NewUserFormGetResAction
+
  *@typedef {import('./fragments/togglers').TogglersCommonAction} TogglersCommonAction
  *@typedef {import('./fragments/togglers').TogglersGetResAction} TogglersGetResAction
+
  *@typedef {import('./fragments/usersList').UsersListCommonAction} UsersListCommonAction
  *@typedef {import('./fragments/usersList').UsersListGetResAction} UsersListGetResAction
  */
-
-//*@typedef {import('./fragments/user.item').UserItemCommonAction} UserItemCommonAction
-//*@typedef {import('./fragments/user.item').UserItemGetResAction} UserItemGetResAction
 
 /**
  *@typedef {object} AdminPageInteractionInterface

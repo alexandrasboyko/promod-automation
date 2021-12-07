@@ -1,6 +1,7 @@
 //@ts-check
 const {BaseFragment, Input, Button, Checkbox} = require('../../../../lib')
 
+
 /**
  * @typedef {object} NewUserFormCommonAction
  * @property {null} [username] username
@@ -16,17 +17,18 @@ const {BaseFragment, Input, Button, Checkbox} = require('../../../../lib')
  * @property {string} [name] name
  * @property {string} [email] email
  * @property {string} [password] password
- * @property {boolean} [isAdmin] isAdmin
+ * @property {boolean} [isAdmin] is Admin
  * @property {string} [create] create
  */
 
 /**
  * @typedef {object} NewUserFormSendKeysAction
- * @property {string|number} [username] username
- * @property {string|number} [name] name
- * @property {string|number} [email] email
- * @property {string|number} [password] password
- * @property {boolean} [isAdmin] isAdmin
+ * @property {string} [username] username
+ * @property {string} [name] name
+ * @property {string} [email] email
+ * @property {string} [password] password
+ * @property {boolean} [isAdmin] is Admin
+ * @property {string} [create] create
  */
 
 // Фрагмент-регистрации

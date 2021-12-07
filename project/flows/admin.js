@@ -2,15 +2,15 @@
 const {pageProvider} = require('../pages/provider')
 const {expect} = require('assertior')
 
-//логика работы страницы tables
+//логика работы страницы admin
 const {admin} = pageProvider
 
 /**
  * @param {object} userData
- * @param {string|number} [userData.username] username
- * @param {string|number} [userData.name] name
- * @param {string|number} [userData.email] email
- * @param {string|number} [userData.password] password
+ * @param {string} [userData.username] username
+ * @param {string} [userData.name] name
+ * @param {string} [userData.email] email
+ * @param {string} [userData.password] password
  * @param {boolean} [userData.isAdmin] isAdmin
  * @returns {Promise<void>}
  */
@@ -27,10 +27,13 @@ async function createNewUserOnAdminPage(userData) {
 
 async function checkThatUserInUsersList(username) {
   await admin.click({togglers: {usersList: null}})
-  const {usersList: {users}} = await admin.getData({usersList: {users: {action: {username: null}, username}}})
-  console.log({usersList: {users: {action: {username: null}, username}}})
-}
+  const {usersList: {users}} = await admin.getData({usersList: {users: {action: {username: null}}}})
+  console.log(users)
+  expect(users.some((item) => {
+    return item.username === username
+  })).toEqual(true, 'User was found')
 
+}
 
 module.exports = {
   createNewUserOnAdminPage, checkThatUserInUsersList

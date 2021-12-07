@@ -9,7 +9,7 @@ const {UserItemFragment} = require('./user.item')
 
 /**
  * @typedef {object} UsersListCommonAction
- * @property {{index?:number; action:UserItemCommonAction} & UserItemGetResAction} [users] users
+ * @property {{index?:number; action?:UserItemCommonAction} & UserItemGetResAction } [users] users
  */
 
 /**
@@ -19,13 +19,11 @@ const {UserItemFragment} = require('./user.item')
 
 //Логин-Фрагмент
 class UsersListFragment extends BaseFragment {
-  constructor(root, name) {
+  constructor(root, name,) {
     super(root, name)
-    this.users = this.init('.user_item', 'New User', BaseCollection, UserItemFragment) // root-колекции элементов UsersList-фрагмента на admin-странице
-    console.log(this)
+    this.users = this.init(`.user_item`, `User Item Line`, BaseCollection, UserItemFragment) // root-колекции элементов UsersList-фрагмента на admin-странице
   }
 }
-
 module.exports = {
   UsersListFragment
 }

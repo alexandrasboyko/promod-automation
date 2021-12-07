@@ -32,8 +32,16 @@ describe('Login form', () => {
     //const userData = {username: 'admin', password: 'admin'}
     await I.loginToSystem({username: 'admin', password: 'admin'})
     await I.navigateToAdmin()
-    await I.createNewUserOnAdminPage({username: 'admin3', name: "admin3", email: "admin3", password: "admin3"})
-    await I.checkThatUserInUsersList("admin3")
+    await client.switchToTab({title: 'Адмінська сторінка'})
+    await I.createNewUserOnAdminPage({
+      username: 'admin7',
+      name: "admin7",
+      email: "admin7",
+      password: "admin7"
+    })
+    await I.checkThatUserInUsersList("admin7")
+    await client.returnToInitialTab()
+    console.log(await client.getTitle())
     await client.sleep(7000)
   })
 })

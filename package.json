@@ -20,10 +20,11 @@
   },
   "homepage": "https://github.com/alexandrasboyko/promod-automation#readme",
   "dependencies": {
+    "abstraction_thinking": "file:abstract_thinking",
     "allure-mocha": "^2.0.0-beta.14",
     "assertior": "^0.0.26",
     "mocha": "^9.1.3",
-    "promod": "^0.0.28",
+    "promod": "^0.0.30",
     "sat-utils": "^0.0.18"
   }
 }
