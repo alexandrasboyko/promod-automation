@@ -28,7 +28,7 @@ async function createNewUserOnAdminPage(userData) {
 async function checkThatUserInUsersList(username) {
   await admin.click({togglers: {usersList: null}})
   const {usersList: {users}} = await admin.getData({usersList: {users: {action: {username: null}}}})
-  console.log(users)
+  //console.log(users)
   expect(users.some((item) => {
     return item.username === username
   })).toEqual(true, 'User was found')

@@ -41,7 +41,7 @@ describe('Login form', () => {
     })
     await I.checkThatUserInUsersList("admin7")
     await client.returnToInitialTab()
-    console.log(await client.getTitle())
+    await client.getTitle()
     await client.sleep(7000)
   })
 })
