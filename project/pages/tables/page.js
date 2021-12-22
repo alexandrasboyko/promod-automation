@@ -5,6 +5,8 @@ const {HeaderFragment} = require('./fragments/header')
 /**
  *@typedef {import('./fragments/header').HeaderCommonAction} HeaderCommonAction
  *@typedef {import('./fragments/header').HeaderGetResAction} HeaderGetResAction
+ *@typedef {import('./fragments/header').HeaderIsDispResAction} HeaderIsDispResAction
+
  */
 
 /**
@@ -19,6 +21,14 @@ const {HeaderFragment} = require('./fragments/header')
   *Promise<{
   *header?: HeaderGetResAction
   *} >} getData getData-click method
+ *@property {(data:{
+  *header?:HeaderCommonAction })=>
+  *Promise<{
+  *header?: HeaderIsDispResAction
+  *} >} isDisplayed click method
+ *@property {(data:{
+  *header?:HeaderGetResAction|HeaderIsDispResAction })=>
+  *Promise<void>} waitForPageState waitForPageState method
   */
 
 class TablesPage extends BasePage {
