@@ -10,8 +10,8 @@ describe('Login form', () => {
     const userData = {username: 'admin', password: 'admin'}
     await client.get('http://localhost:4000/')
     await I.loginToSystem(userData)
-    await client.sleep(7000)
-    await I.checkThatUserLoggedInSystem(userData.username)
+    //await client.sleep(7000)
+    await I.checkThatUserLoggedInSystem(userData.username, true)
     await client.sleep(11000)
   })
   it('[N] Failed login', async () => {

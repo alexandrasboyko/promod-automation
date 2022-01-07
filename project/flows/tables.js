@@ -15,8 +15,13 @@ const {tables} = pageProvider
 async function checkThatUserLoggedInSystem(username, isAdmin) { // функция проверки логина в систему
   let greetingMessage = `Таблиці, Привіт ${username}`
   if(isBoolean(isAdmin)) {
+
     await tables.waitForPageState({header: {isAdminMarker: isAdmin}})
+
+    console.log("!! {header: {isAdminMarker: isAdmin}}==>", {header: {isAdminMarker: isAdmin}}) //проверяет до тех пор, пока условие isAdminMarker не будет равным true, а будет оно равным true, тогда когда isAdminMarke=* (т.е. равно значению *)
+
     greetingMessage += isAdmin ? '*' : ''
+    console.log(' !! greetingMessage==>', greetingMessage)
   }
   await tables.waitForPageState({header: {greetingMessage}})
 
