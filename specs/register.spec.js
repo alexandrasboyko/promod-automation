@@ -2,6 +2,7 @@
 
 const {provider} = require('../project/index')
 const {I, client} = provider
+const {it} = provider.testRunner
 
 
 describe('Login form', () => {
@@ -9,6 +10,7 @@ describe('Login form', () => {
   it.only('[P] Success login', async () => {
     const userData = {username: 'admin', password: 'admin'}
     await client.get('http://localhost:4000/')
+    //throw new Error('This test should fail')
     await I.loginToSystem(userData)
     //await client.sleep(7000)
     await I.checkThatUserLoggedInSystem(userData.username, true)
