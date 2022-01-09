@@ -10,9 +10,9 @@ describe('Login form', () => {
   it.only('[P] Success login', async () => {
     const userData = {username: 'admin', password: 'admin'}
     await client.get('http://localhost:4000/')
-    //throw new Error('This test should fail')
+    throw new Error('This test should fail')
     await I.loginToSystem(userData)
-    //await client.sleep(7000)
+    await client.sleep(7000)
     await I.checkThatUserLoggedInSystem(userData.username, true)
     await client.sleep(11000)
   })

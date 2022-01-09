@@ -58,7 +58,20 @@ class b {
 const obj_b = new b('Anna', 23)
 // console.log(obj_b)
 
+
 function a({name, ...rest}) {
   console.log(rest)
 }
 a(obj_b)
+
+
+function it(testCaseTitle, testCaseBodyCallback) {
+  mochaIt(testCaseTitle, wrapTestCaseBody(testCaseTitle, testCaseBodyCallback))
+}
+it.only = function(testCaseTitle, testCaseBodyCallback) {
+  mochaIt.only(testCaseTitle, wrapTestCaseBody(testCaseTitle, testCaseBodyCallback))
+}
+
+const mochaIt = global.it
+
+
