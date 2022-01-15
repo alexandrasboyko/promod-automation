@@ -65,13 +65,6 @@ function a({name, ...rest}) {
 a(obj_b)
 
 
-function it(testCaseTitle, testCaseBodyCallback) {
-  mochaIt(testCaseTitle, wrapTestCaseBody(testCaseTitle, testCaseBodyCallback))
-}
-it.only = function(testCaseTitle, testCaseBodyCallback) {
-  mochaIt.only(testCaseTitle, wrapTestCaseBody(testCaseTitle, testCaseBodyCallback))
-}
 
-const mochaIt = global.it
 
 
